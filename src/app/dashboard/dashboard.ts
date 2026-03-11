@@ -1,20 +1,16 @@
-import { Component, signal } from '@angular/core';
-import { RouterOutlet, RouterLink } from '@angular/router';
-import { BaseChartDirective } from 'ng2-charts';
+import { Component } from '@angular/core';
 import { Chart, ChartConfiguration, registerables } from 'chart.js';
+import { BaseChartDirective } from 'ng2-charts';
 
 Chart.register(...registerables);
 
 @Component({
-  selector: 'app-root',
-  standalone: true,
-  imports: [RouterOutlet, RouterLink, BaseChartDirective],
-  templateUrl: './app.html',
-  styleUrl: './app.css',
+  selector: 'app-dashboard',
+  imports: [BaseChartDirective],
+  templateUrl: './dashboard.html',
+  styleUrl: './dashboard.css',
 })
-export class App {
-  protected readonly title = signal('Defence Dashboard');
-
+export class Dashboard {
   barChartData: ChartConfiguration<'bar'>['data'] = {
     labels: ['A', 'B', 'C'],
     datasets: [
