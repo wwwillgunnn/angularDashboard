@@ -1,5 +1,5 @@
 import { Component, signal } from '@angular/core';
-import { RouterOutlet, RouterLink } from '@angular/router';
+import { RouterLink } from '@angular/router';
 import { BaseChartDirective } from 'ng2-charts';
 import { Chart, ChartConfiguration, registerables } from 'chart.js';
 
@@ -8,7 +8,7 @@ Chart.register(...registerables);
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, RouterLink, BaseChartDirective],
+  imports: [RouterLink, BaseChartDirective],
   templateUrl: './app.html',
   styleUrl: './app.css',
 })
